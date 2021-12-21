@@ -1,5 +1,5 @@
 package com.rafaelpsrpDev.algafood_api.controller.model;
-
+/*
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,3 +20,4 @@ public class CozinhasXmlWrapper {
 	@NonNull
 	private List<Cozinha> cozinhas;
 }
+*/

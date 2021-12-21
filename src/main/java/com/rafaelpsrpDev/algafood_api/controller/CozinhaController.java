@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.rafaelpsrpDev.algafood_api.controller.model.CozinhasXmlWrapper;
+//import com.rafaelpsrpDev.algafood_api.controller.model.CozinhasXmlWrapper;
 import com.rafaelpsrpDev.algafood_api.domain.exception.EntidadeEmUsoException;
 import com.rafaelpsrpDev.algafood_api.domain.exception.EntidadeNaoEncontradaException;
 import com.rafaelpsrpDev.algafood_api.domain.exception.EntidadeNaoEncontradaException;
@@ -46,12 +46,12 @@ public class CozinhaController {
 	public List<Cozinha> listar(){
 		return cozinhaRepository.todas();
 	}
-	
+	/*
 	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
 	public CozinhasXmlWrapper listarXML(){
 		return new CozinhasXmlWrapper(cozinhaRepository.todas());
 	}
-	
+	*/
 	@ResponseStatus(HttpStatus.OK)	
 	//produces dentro do getmapping especificar o tipo de retorno xml, json
 	@GetMapping("/{cozinhaId}")
@@ -87,7 +87,7 @@ public class CozinhaController {
 			
 			BeanUtils.copyProperties(cozinha, cozinhaAtual, "id");
 			
-			cozinhaRepository.adicionar(cozinhaAtual);
+			cozinhaAtual = cadastroCozinhaService.salvar(cozinhaAtual);
 			return ResponseEntity.ok(cozinhaAtual);
 		}else {
 			return ResponseEntity.notFound().build();

@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.rafaelpsrpDev.algafood_api.controller.model.CozinhasXmlWrapper;
 import com.rafaelpsrpDev.algafood_api.domain.model.Cozinha;
 import com.rafaelpsrpDev.algafood_api.domain.repository.CozinhaRepository;
+import com.rafaelpsrpDev.algafood_api.domain.service.CadastroCozinhaService;
 
 import ch.qos.logback.core.joran.util.beans.BeanUtil;
 
@@ -33,6 +34,10 @@ public class CozinhaController {
 	
 	@Autowired
 	private CozinhaRepository cozinhaRepository;
+	
+	@Autowired
+	private CadastroCozinhaService cadastroCozinhaService;
+	
 	
 	@GetMapping
 	public List<Cozinha> listar(){
@@ -68,7 +73,7 @@ public class CozinhaController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cozinha adicionar(@RequestBody Cozinha cozinha) {
-		return cozinhaRepository.adicionar(cozinha);
+		return cadastroCozinhaService.salvar(cozinha);
 	}
 	
 	@PutMapping("/{cozinhaId}")

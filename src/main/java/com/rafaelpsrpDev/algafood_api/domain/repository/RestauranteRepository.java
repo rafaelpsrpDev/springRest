@@ -8,6 +8,6 @@ public interface RestauranteRepository {
 	
 	List<Restaurante> todas();
 	Restaurante porId(Long id);
-	Restaurante adicionar(Restaurante cozinha);
-	void remover(Restaurante cozinha);
+	Restaurante adicionar(Restaurante restaurante);
+	void remover(Long id);
 }

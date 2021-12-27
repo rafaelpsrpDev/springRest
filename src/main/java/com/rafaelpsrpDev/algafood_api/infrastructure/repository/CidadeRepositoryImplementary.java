@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,9 +40,15 @@ public class CidadeRepositoryImplementary implements CidadeRepository {
 	
 	@Transactional
 	@Override
-	public void remover(Cidade cidade) {
-		cidade = porId(cidade.getId());
-		manager.remove(cidade);	
+	public void remover(Long cidadeId) {
+		Cidade cidade = porId(cidadeId);
+
+		if(cidade == null) {
+			throw new EmptyResultDataAccessException(1);
+		}else {			
+			manager.remove(cidade);
+		}
+		
 	}
 	
 }

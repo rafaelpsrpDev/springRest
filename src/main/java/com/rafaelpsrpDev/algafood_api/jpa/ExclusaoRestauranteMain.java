@@ -19,10 +19,8 @@ public class ExclusaoRestauranteMain {
 		RestauranteRepository restauranteRepository = applicationContext.getBean(RestauranteRepository.class);
 		
 		Restaurante restaurante = new Restaurante();
-		
-		restaurante.setId(1L);
-		
-		restauranteRepository.remover(restaurante);
+	
+		restauranteRepository.remover(1L);
 	}
 
 }

@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rafaelpsrpDev.algafood_api.domain.exception.EntidadeNaoEncontradaException;
@@ -15,9 +16,9 @@ import com.rafaelpsrpDev.algafood_api.domain.model.Cozinha;
 import com.rafaelpsrpDev.algafood_api.domain.model.Restaurante;
 import com.rafaelpsrpDev.algafood_api.domain.repository.RestauranteRepository;
 
-@Component
-public class RestauranteRepositoryImplementary implements RestauranteRepository {
-	
+@Repository
+public class RestauranteRepositoryImplementary {
+	/*
 	@PersistenceContext
 	private EntityManager manager;
 	
@@ -51,5 +52,5 @@ public class RestauranteRepositoryImplementary implements RestauranteRepository 
 			manager.remove(restaurante);
 		}
 	}
-
+*/
 }

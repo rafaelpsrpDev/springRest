@@ -8,14 +8,15 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rafaelpsrpDev.algafood_api.domain.model.Cidade;
 import com.rafaelpsrpDev.algafood_api.domain.repository.CidadeRepository;
 
-@Component
-public class CidadeRepositoryImplementary implements CidadeRepository {
-	
+@Repository
+public class CidadeRepositoryImplementary {
+	/*	
 	@PersistenceContext
 	private EntityManager manager;
 
@@ -49,6 +50,6 @@ public class CidadeRepositoryImplementary implements CidadeRepository {
 			manager.remove(cidade);
 		}
 		
-	}
+	}*/
 	
 }

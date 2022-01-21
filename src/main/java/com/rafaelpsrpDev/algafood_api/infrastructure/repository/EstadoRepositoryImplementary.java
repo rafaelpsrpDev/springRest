@@ -8,15 +8,16 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rafaelpsrpDev.algafood_api.domain.model.Cozinha;
 import com.rafaelpsrpDev.algafood_api.domain.model.Estado;
 import com.rafaelpsrpDev.algafood_api.domain.repository.EstadoRepository;
 
-@Component
-public class EstadoRepositoryImplementary implements EstadoRepository {
-
+@Repository
+public class EstadoRepositoryImplementary  {
+/*
 	@PersistenceContext
 	private EntityManager manager;
 	
@@ -51,4 +52,5 @@ public class EstadoRepositoryImplementary implements EstadoRepository {
 		}
 		
 	}
+	*/
 }

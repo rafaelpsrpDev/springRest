@@ -7,14 +7,16 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rafaelpsrpDev.algafood_api.domain.model.FormaPagamento;
 import com.rafaelpsrpDev.algafood_api.domain.repository.FormaPagamentoRepository;
 
-@Component
-public class FormaPagamentoRepositoryImplementary implements FormaPagamentoRepository{
+@Repository
+public class FormaPagamentoRepositoryImplementary {
 	
+	/*
 	@PersistenceContext
 	private EntityManager manager;
 	
@@ -46,6 +48,6 @@ public class FormaPagamentoRepositoryImplementary implements FormaPagamentoRepos
 		manager.remove(formaPagamento);
 		
 	}
-	
+	*/
 	
 }
